@@ -1,0 +1,21 @@
+{
+  "id": "nuxt",
+  "name": "Nuxt",
+  "description": "Nuxt app with Nitro server routes and Bunny CDN header detection, deployed to Magic Containers.",
+  "icon": "code",
+  "containers": [
+    {
+      "name": "app",
+      "imageNamespace": "ghcr.io",
+      "imageName": "<your-username>/mc-template-nuxt",
+      "imageTag": "latest",
+      "endpoints": [
+        {
+          "displayName": "HTTP",
+          "type": "CDN",
+          "containerPort": 3000
+        }
+      ]
+    }
+  ]
+}
