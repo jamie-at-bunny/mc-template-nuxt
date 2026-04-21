@@ -1,12 +1,14 @@
 <script setup lang="ts">
-const headers = useRequestHeaders([
-  'cdn-requestcountrycode',
-  'cdn-requestid',
-  'cdn-pullzoneid',
-  'cdn-loopcount',
-])
+const headers = useState('bunny-cdn-headers', () =>
+  useRequestHeaders([
+    'cdn-requestcountrycode',
+    'cdn-requestid',
+    'cdn-pullzoneid',
+    'cdn-loopcount',
+  ]),
+)
 
-const entries = computed(() => Object.entries(headers).filter(([, v]) => v))
+const entries = computed(() => Object.entries(headers.value).filter(([, v]) => v))
 </script>
 
 <template>
